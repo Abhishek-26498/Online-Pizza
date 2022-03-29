@@ -70,3 +70,43 @@
     width: 20px;
     height: 20px;
 }
+.quantity{
+    width: 50px;
+    height: 30px;
+}
+.button{
+    height: 30px;
+    margin-left: 10px;
+    background-color: #d1411e;
+    color: white;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+@media screen and (max-width:480px){
+    .container{
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        margin-top: 20px;
+    }
+    .imgContainer{
+        width: 100vw;
+    height: 30vh;
+    }
+    .sizes{
+        width: 100%;
+        padding: 0 20px;
+    }
+    .ingredients{
+        flex-direction: column;
+    }
+    .options{
+        margin: 10px;
+        font-size: 18px;
+    }
+    .quantity{
+        width: 30px;
+    }
+
+}
