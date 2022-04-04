@@ -33,7 +33,7 @@ const OrderDetail = ({total, createOrder}) => {
             className={styles.input} 
             onChange={(e)=>setAddress(e.target.value)} />
              </div>
-       <button className={styles.button} onClick={handleClick}>Order</button>
+       <button className={styles.button} onClick={handleClick()}>Order</button>
     </div>
     </div>
   )
