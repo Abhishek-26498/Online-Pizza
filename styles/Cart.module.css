@@ -61,10 +61,11 @@
     border: none;
     border-radius: 2px;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-top: 5px;
     background-color: #fff;
     color: teal;
     font-weight: bold;
+    width: 100%;
 }
 @media screen and (max-width:480px){
     .container{
