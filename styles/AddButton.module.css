@@ -1,0 +1,10 @@
+.mainAddButton{
+    background-color: #d1411e;
+    width: 154px;
+    padding: 5px 24px;
+    margin: 16px 14px;
+    color: white;
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+}

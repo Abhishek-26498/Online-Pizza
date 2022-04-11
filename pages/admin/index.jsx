@@ -10,7 +10,7 @@ const Index = ({ pizzaList, orders }) => {
     const handleDelete = async (id)=>{
         try {
             const res = await axios.delete(
-                `http://localhost:3000/api/products${id}`)
+                "http://localhost:3000/api/products/" + id);
             setPiza(piza.filter((piza) => piza._id !== id));
         } catch (error) {
             console.log(error)
@@ -114,7 +114,18 @@ const Index = ({ pizzaList, orders }) => {
 }
 
 
-export const getServerSideProps = async () =>{
+export const getServerSideProps = async (ctx) =>{
+    const myCookie = ctx.req?.cookies || "";
+
+    if(myCookie.token !== process.env.TOKEN){
+        return{
+            redirect:{
+                destination:"/admin/login",
+                permanent: false,
+            },
+        }
+    }
+
     const res = await axios.get("http://localhost:3000/api/products")
     const orderRes = await axios.get("http://localhost:3000/api/orders");
     return{
