@@ -57,9 +57,11 @@
 }
 .priceContainer{
     display: flex;
+    
     justify-content: space-between;
+   
 }
-.Sm{
+.inputSm{
     width: 25%;
 }
 .extra{

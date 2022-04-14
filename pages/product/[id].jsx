@@ -12,7 +12,7 @@ const Product = ({pizza}) => {
     const [extras, setExtras] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const dispatch =useDispatch()
-
+    console.log(pizza);
     const changePrice = (number) =>{
         setPrice(price+number);
     }
@@ -81,7 +81,7 @@ const Product = ({pizza}) => {
                     </div>
                     ))}
                     
-                    
+                  
                 </div>
                 <div className={styles.add}>
                     <input 

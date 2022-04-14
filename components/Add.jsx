@@ -10,7 +10,7 @@ const Add = ({ setClose }) => {
   const [prices, setPrices] = useState([]);
   const [extraOptions, setExtraOptions] = useState([]);
   const [extra, setExtra] = useState(null);
-
+console.log(extra)
   const changePrice = (e, index) => {
     const currentPrices = prices;
     currentPrices[index] = e.target.value;
@@ -22,7 +22,7 @@ const Add = ({ setClose }) => {
   };
 
   const handleExtra = (e) => {
-    setExtraOptions((prev) => [...prev, extra]);
+    setExtraOptions((prev) => [...prev , extra]);
   };
 
   const handleCreate = async () => {
@@ -43,7 +43,7 @@ const Add = ({ setClose }) => {
         extraOptions,
         img: url,
       };
-
+console.log(newProduct)
       await axios.post("http://localhost:3000/api/products", newProduct);
       setClose(true);
     } catch (err) {
@@ -57,7 +57,7 @@ const Add = ({ setClose }) => {
         <span onClick={() => setClose(true)} className={styles.close}>
           X
         </span>
-        <h1>Add a new Pizza</h1>
+        <h1>Add a New Pizza</h1>
         <div className={styles.item}>
           <label className={styles.label}>Choose an image</label>
           <input type="file" onChange={(e) => setFile(e.target.files[0])} />
@@ -109,6 +109,7 @@ const Add = ({ setClose }) => {
               type="text"
               placeholder="Item"
               name="text"
+              
               onChange={handleExtraInput}
             />
             <input
@@ -116,6 +117,7 @@ const Add = ({ setClose }) => {
               type="number"
               placeholder="Price"
               name="price"
+              
               onChange={handleExtraInput}
             />
             <button className={styles.extraButton} onClick={handleExtra}>
